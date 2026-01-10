@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 壁 */
+.room-wall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #FAF5E9;
+  transform: translateZ(-200px);
+  z-index: -1;
+}
+
+/* 本棚 */
+.bookshelf-3d {
+  display: flex;
+  padding: 20px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), /* ← 黒の透過レイヤー */ 
+  url("/public/covers/background.png"); /* ← 背景画像 */
+
+  
+  background-position: center; 
+  background-repeat: no-repeat;
+
+  perspective: 1500px;
+  transform-style: preserve-3d;
+
+  margin: 0 auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bookshelf-3d::-webkit-scrollbar {
+  display: none;
+}
+
+/* 本全体 */
+.book-3d {
+  width: 360px;
+  height: 540px;
+  position: relative;
+  transform-style: preserve-3d;
+  flex-shrink: 0;
+  transform-origin: center center;
+  margin-right: 240px;
+  transition: box-shadow 0.25s ease-out;
+}
+
+/* 本の内側 */
+.book-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* 表紙（外側） */
+
+.book-cover {
+  position: absolute;
+  height: 100%;
+  left: var(--book-thickness);
+  width: 120%;
+  transform-origin: center left;
+  transition: transform 0.6s ease;
+  z-index: 5;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* 表紙裏は表紙の中に入れて一緒に回転させる */
+.book-cover-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg); /* 表紙の裏側に貼り付ける */
+  backface-visibility: hidden;
+  z-index: 4;
+}
+
+/* 表紙が開くときは表紙だけ回転。表紙裏は一緒に回る */
+.book-3d:hover .book-cover,
+.book-3d.active .book-cover {
+  transform: rotateY(-140deg);
+}
+
+
+.book-cover-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* ページ */
+.book-pages {
+  position: absolute;
+  left: var(--book-thickness);
+  width: 105%;
+  height: 92.5%;
+  background: #fffdf8;
+  transform: translateZ(-1px);
+  padding: 20px;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+/* 裏表紙 */
+.book-back {
+  position: absolute;
+  left: var(--book-thickness);
+  width: calc(100% - var(--book-thickness));
+  background: #f0e6d8;
+  transform: translateZ(calc(var(--book-thickness) / -2));
+  border-radius: 3px;
+  z-index: 0;
+}
+
+/* 背表紙 */
+.book-spine {
+  position: absolute;
+  width: var(--book-thickness);
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #efe6d8;
+  box-shadow: inset -3px 0 6px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  z-index: 3;
+}
+
+/* 選択状態 */
+.book-3d.active {
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(120px);
+  z-index: 9999;
+}
+
+.book-3d.active .book-cover {
+  transform: rotateY(-140deg) !important;
+  transition: transform 0.8s ease;
+}
+
+/* フェードアウト */
+.book-3d.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+}
+
+/* ヘッダー・フッター */
+.header {
+  width: 100%;
+  height: 30px;
+  color: #6b5e52;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  color: #6b5e52;
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+:root {
+  --book-thickness: 50px;
+}
+
+.photo{
+  width: 500px;
+  height: 500px;
+}
+
+.photo2{
+  width: 500px;
+  height: 500px;   
+  display: right;
+}
+
+.content{
+    display: flex;
+}
+
+.explanation{
+    display:center;
+}
+
+.bookshelf-wrapper {
+  position: relative;   /* ← ボタンの基準になる */
+  width: 100%;
+}
