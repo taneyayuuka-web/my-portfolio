@@ -16,7 +16,7 @@ export default function Login() {
 
   return (
     <div style={{ padding: "40px", textAlign: "center" }}>
-      <h2>鍵を開けてください</h2>
+      <h2>パスワード</h2>
       <input
         type="password"
         placeholder="Password"
@@ -28,7 +28,7 @@ export default function Login() {
         onClick={handleSubmit}
         style={{ marginLeft: "10px", padding: "10px 20px" }}
       >
-        開く
+        入力
       </button>
     </div>
   );
