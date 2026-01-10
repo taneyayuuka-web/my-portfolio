@@ -72,29 +72,30 @@ const handleScroll = () => {
   if (!el || isAdjusting.current) return;
 
   const third = el.scrollWidth / 3;
+  const center = third; // 常に中央ブロック
 
-  // ===== tilt =====
+  // tilt
   const delta = el.scrollLeft - lastScrollLeft.current;
   lastScrollLeft.current = el.scrollLeft;
 
   tilt.current = Math.max(-6, Math.min(6, delta * 0.2));
   el.style.setProperty("--tilt", `${tilt.current}deg`);
 
-  // ===== 無限スクロール補正 =====
-  if (el.scrollLeft < third * 0.6) {
+  // ===== 無限補正（完全安定版） =====
+  if (el.scrollLeft < center - third * 0.25) {
     isAdjusting.current = true;
     requestAnimationFrame(() => {
-      el.scrollLeft += third;
-      lastScrollLeft.current = el.scrollLeft;
+      el.scrollLeft = center;
+      lastScrollLeft.current = center;
       isAdjusting.current = false;
     });
   }
 
-  if (el.scrollLeft > third * 1.4) {
+  if (el.scrollLeft > center + third * 0.25) {
     isAdjusting.current = true;
     requestAnimationFrame(() => {
-      el.scrollLeft -= third;
-      lastScrollLeft.current = el.scrollLeft;
+      el.scrollLeft = center;
+      lastScrollLeft.current = center;
       isAdjusting.current = false;
     });
   }
