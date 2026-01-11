@@ -47,11 +47,14 @@ const books = [
   { 
     id: 4, 
     title: "Book 4", 
-    cover: "/covers/book2.png",
-    innerCover:"/covers/book-innner.png",     
-        content: ` <h1>ピンセット</h1> 
-    <p>これはサンプルの本文です。</p> 
-    <p>自由に改行できます。</p> `, 
+    cover: "/covers/book4.png",
+    innerCover:"/covers/book-inner4.png",     
+    content: ` <h1>ピンセット</h1> 
+    <h3>3回生後期授業「UXデザイン演習」</h3>
+    <p>心蕾は入力もしくは選択した感情から様々な花を</p>
+    <p>ピンセットは、学習を効率的に支援する塾講師向</p>
+    <p>けのシステムです。AIが生徒の苦手を分析し、類</p>
+    <p>似問題の抜粋や制作をおこないます。</p> `, 
     link: "/",        // ← 本4の遷移先
     spineColor:"#dcbb3b"
   },
