@@ -61,13 +61,17 @@ const books = [
   { 
     id: 5, 
     title: "Book 5", 
-    cover: "/covers/background.png", 
-    innerCover:"/covers/book-innner.png",
-        content: ` <h1>リュック</h1> 
-    <p>これはサンプルの本文です。</p> 
-    <p>自由に改行できます。</p> `, 
+    cover: "/covers/book5.png", 
+    innerCover:"/covers/book-inner5.png",
+    content: ` <h1>リュック</h1> 
+    <h3>3回生後期授業「UXデザイン演習」</h3>
+    <p>心蕾は入力もしくは選択した感情から様々な花を</p>
+    <p>「リュックサック」をケーススタディとして、視</p>
+    <p>覚言語に対応する概念の抽出と、抽出した概念を</p>
+    <p>組み合わせることにより、自分なりのリュックサッ</p>
+    <p>クを作成しました。</p> `, 
     link: "/",        // ← 本5の遷移先
-    spineColor:"#c0392b"
+    spineColor:"#53547b"
   },
   { 
     id: 6, 
