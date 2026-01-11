@@ -132,7 +132,7 @@ export default function App() {
       <section class = "content">        
         <div class = "photo">
           <img
-              src = "/covers/book1.jpg"
+              src = "/covers/icon.jpg"
               alt = "my icon"
               className="photo"
           />
@@ -150,7 +150,7 @@ export default function App() {
         <p>illustratorによる基本のデザイン、方法論による分析、柔軟な発想を行うことができます。柔軟な発想はプログラミングを学習したことで身についたものであり、試行錯誤をくり返しつつ複数ある正解の形に近づいていく思考をデザインに活かしています。分析による、感覚的ではない根拠のある論理的なデザインが得意です</p>
           <div className = "photo2">
           <img
-              src = "/covers/book1.jpg"
+              src = "/covers/profile2.png"
               alt = "my icon"
               className="photo"
           />
