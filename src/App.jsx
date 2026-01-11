@@ -9,12 +9,11 @@ const books = [
     cover: "/covers/book.png", // 表紙 
     innerCover: "/covers/book-inner.png", // 表紙裏 
     content: ` <h1>心蕾</h1> 
-    <h2>3回生前期授業「アプリデザイン総合演習」</h2>
+    <h3>3回生前期授業「アプリデザイン総合演習」</h3>
     <p>心蕾は入力もしくは選択した感情から様々な花を</p>
     <p>咲かせるアプリです。咲いた花は塗り絵、ペーパー</p>
     <p>クラフト、立体メモとして作ったり飾ったりして</p>
-    <p>楽しみ、感情を記録します。</p> 
-    <p>自由に改行できます。</p> `, 
+    <p>楽しみ、感情を記録します。</p> `, 
     link: "/",
     spineColor: "#479680"//背表紙カラー
   },
@@ -22,10 +21,12 @@ const books = [
     id: 2, 
     title: "Book 2", 
     cover: "/covers/gettone.png", 
-    innerCover:"/covers/book-innner.png",
+    innerCover:"/covers/book-inner2.png",
     content: ` <h1>ゲッTONE</h1> 
-    <p>これはサンプルの本文です。</p> 
-    <p>自由に改行できます。</p> `, 
+    <h3>TONE株式会社秋季インターンシップ</h3>
+    <p>ゲッTONEは工具の画像をAIを通して種類を判別</p>
+    <p>し、判明した種類ごとに使用方法をゲームで学習</p>
+    <p>するアプリです。</p> `, 
     link: "/" ,      
     spineColor: "#c0392b"
   },
