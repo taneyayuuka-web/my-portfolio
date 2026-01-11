@@ -9,7 +9,7 @@ const books = [
     cover: "/covers/book.png", // 表紙 
     innerCover: "/covers/book-inner.png", // 表紙裏 
     content: "心蕾/n", //内容
-    link: "/shinrai",
+    link: "/",
     spineColor: "#479680"//背表紙カラー
   },
   { 
@@ -18,7 +18,7 @@ const books = [
     cover: "/covers/gettone.png", 
     innerCover:"/covers/book-innner.png",
     content: "ゲッTONE",
-    link: "/gettone" ,      
+    link: "/" ,      
     spineColor: "#c0392b"
   },
   { 
@@ -27,7 +27,7 @@ const books = [
     cover: "/covers/book3.png", 
     innerCover:"/covers/book-innner.png",
     content: "玩具業界についてのポスター",
-    link: "/pinset",      // ← 本3の遷移先
+    link: "/",      // ← 本3の遷移先
     spineColor:"#386c98"
   },
   { 
@@ -36,7 +36,7 @@ const books = [
     cover: "/covers/book2.png",
     innerCover:"/covers/book-innner.png",     
     content: "ピンセット\n3回生後期「UXデザイン演習課題」",
-    link: "/pinset",        // ← 本4の遷移先
+    link: "/",        // ← 本4の遷移先
     spineColor:"#dcbb3b"
   },
   { 
@@ -45,7 +45,7 @@ const books = [
     cover: "/covers/background.png", 
     innerCover:"/covers/book-innner.png",
     content: "リュック",
-    link: "/story/about",        // ← 本5の遷移先
+    link: "/",        // ← 本5の遷移先
     spineColor:"#c0392b"
   },
   { 
@@ -60,7 +60,7 @@ const books = [
   { 
     id: 7, 
     title: "Book 7", 
-    cover: "/covers/book1.jpg", 
+    cover: "/covers/book7.png", 
     innerCover:"/covers/book-innner.png",
     content: "自主制作",
     link: "/",      // ← 本6の遷移先
