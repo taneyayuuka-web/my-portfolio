@@ -59,6 +59,7 @@ body {
   transform-origin: center center;
   margin-right: 240px;
   transition: box-shadow 0.25s ease-out;
+  transform: rotateY(var(--tilt, 0deg));
 }
 
 /* 本の内側 */
@@ -101,6 +102,12 @@ body {
   transform: rotateY(-140deg);
 }
 
+.book-cover,
+.book-back,
+.book-pages {
+  position: absolute;
+  backface-visibility: hidden;
+}
 
 .book-cover-inner img {
   width: 100%;
