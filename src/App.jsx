@@ -34,10 +34,13 @@ const books = [
     id: 3, 
     title: "Book 3", 
     cover: "/covers/book3.png", 
-    innerCover:"/covers/book-innner.png",
-        content: ` <h1>玩具業界ポスター</h1> 
-    <p>これはサンプルの本文です。</p> 
-    <p>自由に改行できます。</p> `, 
+    innerCover:"/covers/book-inner3.png",
+    content: ` <h1>玩具業界ポスター</h1> 
+    <h3>2回生前期授業「情報デザイン」</h3>
+    <p>玩具業界の代表の4社をポスターにしました。各</p>
+    <p>会社ごとの目玉となっている商品が大きく描かれ</p>
+    <p>ているため、業界を知らない人でもどのような会</p>
+    <p>社であるか理解することができます。</p>`, 
     link: "/",      // ← 本3の遷移先
     spineColor:"#386c98"
   },
