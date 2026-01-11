@@ -9,6 +9,7 @@ const books = [
     cover: "/covers/book.png", // 表紙 
     innerCover: "/covers/book-inner.png", // 表紙裏 
     content: ` <h1>心蕾</h1> 
+    <h2>3回生前期授業「アプリデザイン総合演習」</h2>
     <p>心蕾は入力もしくは選択した感情から様々な花を</p>
     <p>咲かせるアプリです。咲いた花は塗り絵、ペーパー</p>
     <p>クラフト、立体メモとして作ったり飾ったりして</p>
@@ -76,7 +77,7 @@ const books = [
     id: 7, 
     title: "Book 7", 
     cover: "/covers/book7.png", 
-    innerCover:"/covers/book-innner.png",
+    innerCover:"/covers/book-inner7.png",
         content: ` <h1>自主制作</h1> 
     <p>これはサンプルの本文です。</p> 
     <p>自由に改行できます。</p> `, 
