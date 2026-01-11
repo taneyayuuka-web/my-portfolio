@@ -214,10 +214,6 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   justify-content: center; /* 横中央 */
 }
 
-.graph{
-  display: flex;
-  justify-content: center; /* 横中央 */
-}
 
 .content{
     display: flex;
