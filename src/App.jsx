@@ -63,7 +63,7 @@ const books = [
     title: "Book 5", 
     cover: "/covers/book5.png", 
     innerCover:"/covers/book-inner5.png",
-    content: ` <h1>リュック</h1> 
+    content: ` <h1>製品分析</h1> 
     <h3>3回生後期授業「UXデザイン演習」</h3>
     <p>心蕾は入力もしくは選択した感情から様々な花を</p>
     <p>「リュックサック」をケーススタディとして、視</p>
@@ -77,10 +77,14 @@ const books = [
     id: 6, 
     title: "Book 6", 
     cover: "/covers/book6.png", 
-    innerCover:"/covers/book-innner.png",
-        content: ` <h1>印象マップ</h1> 
-    <p>これはサンプルの本文です。</p> 
-    <p>自由に改行できます。</p> `, 
+    innerCover:"/covers/book-inner6.png",
+        content: ` <h1>印象マップ</h1>
+    <h3>3回生前期授業「デザイン企画論A」</h3>
+    <p>心蕾は入力もしくは選択した感情から様々な花を</p> 
+    <p>グループ活動で行ったKJ法を個人で行ったAHP法</p>
+    <p>と組み合わせてインフォグラフィクスにしました。</p>
+    <p>重要な要素を色や大きさ、イラストでわかりやす</p>
+    <p>いデザインにしました。</p>`, 
     link: "/",      // ← 本6の遷移先
     spineColor:"#9bb68f"
   },
@@ -90,7 +94,12 @@ const books = [
     cover: "/covers/book7.png", 
     innerCover:"/covers/book-inner7.png",
         content: ` <h1>自主制作</h1> 
-    <p>これはサンプルの本文です。</p> 
+    <p>心蕾は入力もしくは選択した感情から様々な花を</p>
+    <p>部活では、気ままに創作イラストを描いています。</p>
+    <p>今年度は初めてフリーマーケットでイラストグッ</p>
+    <p>ズの販売をおこない、3万7千円の収益をあげるこ</p>
+    <p>とができました。時々大学のGameJamに参加して</p>
+    <p>います。</p> 
     <p>自由に改行できます。</p> `, 
     link: "/",      // ← 本6の遷移先
     spineColor:"#4c4b4c"
