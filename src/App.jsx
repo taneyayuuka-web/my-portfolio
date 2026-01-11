@@ -125,8 +125,8 @@ export default function App() {
       </div>
 
       <div class="text">
-        <h1>自己紹介</h1>
         <p>profile</p>
+        <h1>自己紹介</h1>
       </div>    
         
       <section class = "content">        
