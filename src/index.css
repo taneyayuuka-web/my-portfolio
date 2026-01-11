@@ -108,6 +108,10 @@ body {
   object-fit: cover;
 }
 
+.bookshelf-wrapper {
+  position: relative;
+}
+
 
 .book-cover img {
   width: 100%;
@@ -155,12 +159,13 @@ body {
 
 /* 選択状態 */
 .book-3d.active {
-  position: fixed !important;
-  top: 50%;
+  position: absolute;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%) translateZ(120px);
-  z-index: 9999;
+  pointer-events: auto;
 }
+
 
 .book-3d.active .book-cover {
   transform: rotateY(-140deg) !important;

@@ -44,7 +44,7 @@ const books = [
     title: "Book 5", 
     cover: "/covers/background.png", 
     innerCover:"/covers/book-innner.png",
-    content: "...",
+    content: "リュック",
     link: "/story/about",        // ← 本5の遷移先
     spineColor:"#c0392b"
   },
@@ -53,7 +53,16 @@ const books = [
     title: "Book 6", 
     cover: "/covers/book1.jpg", 
     innerCover:"/covers/book-innner.png",
-    content: "自己紹介",
+    content: "印象マップ",
+    link: "/",      // ← 本6の遷移先
+    spineColor:"#black"
+  },
+  { 
+    id: 7, 
+    title: "Book 7", 
+    cover: "/covers/book1.jpg", 
+    innerCover:"/covers/book-innner.png",
+    content: "自主制作",
     link: "/",      // ← 本6の遷移先
     spineColor:"#black"
   }
