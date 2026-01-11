@@ -205,14 +205,12 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 }
 
 .photo{
-  width: 500px;
-  height: 500px;
+  width: 250px;
+  height: 250px;
 }
 
-.photo2{
-  width: 500px;
-  height: 500px;   
-  display: right;
+.photo2{ 
+  display: center;
 }
 
 .content{

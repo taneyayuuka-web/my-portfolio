@@ -152,7 +152,7 @@ export default function App() {
           <img
               src = "/covers/profile2.png"
               alt = "my icon"
-              className="photo"
+              className="photo2"
           />
         </div>
       </section>
