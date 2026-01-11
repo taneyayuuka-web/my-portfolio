@@ -166,11 +166,7 @@ body {
 
 /* 選択状態 */
 .book-3d.active {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) translateZ(120px);
-  pointer-events: auto;
+transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 }
 
 
