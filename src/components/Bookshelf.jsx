@@ -108,9 +108,7 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
                   <img src={book.cover} alt="" />
                 </div>
 
-                <div className="book-pages">
-                  {book.content}
-                </div>
+                <div className="book-pages" dangerouslySetInnerHTML={{ __html: book.content }} ></div>
 
                 <div className="book-back" />
               </div>

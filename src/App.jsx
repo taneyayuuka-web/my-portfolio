@@ -8,7 +8,9 @@ const books = [
     title: "Book 1", 
     cover: "/covers/book.png", // 表紙 
     innerCover: "/covers/book-inner.png", // 表紙裏 
-    content: "心蕾/n", //内容
+    content: ` <h1>心蕾</h1> 
+    <p>これはサンプルの本文です。</p> 
+    <p>自由に改行できます。</p> `, 
     link: "/",
     spineColor: "#479680"//背表紙カラー
   },
@@ -17,7 +19,9 @@ const books = [
     title: "Book 2", 
     cover: "/covers/gettone.png", 
     innerCover:"/covers/book-innner.png",
-    content: "ゲッTONE",
+    content: ` <h1>ゲッTONE</h1> 
+    <p>これはサンプルの本文です。</p> 
+    <p>自由に改行できます。</p> `, 
     link: "/" ,      
     spineColor: "#c0392b"
   },
@@ -26,7 +30,9 @@ const books = [
     title: "Book 3", 
     cover: "/covers/book3.png", 
     innerCover:"/covers/book-innner.png",
-    content: "玩具業界についてのポスター",
+        content: ` <h1>玩具業界ポスター</h1> 
+    <p>これはサンプルの本文です。</p> 
+    <p>自由に改行できます。</p> `, 
     link: "/",      // ← 本3の遷移先
     spineColor:"#386c98"
   },
@@ -35,7 +41,9 @@ const books = [
     title: "Book 4", 
     cover: "/covers/book2.png",
     innerCover:"/covers/book-innner.png",     
-    content: "ピンセット\n3回生後期「UXデザイン演習課題」",
+        content: ` <h1>ピンセット</h1> 
+    <p>これはサンプルの本文です。</p> 
+    <p>自由に改行できます。</p> `, 
     link: "/",        // ← 本4の遷移先
     spineColor:"#dcbb3b"
   },
@@ -44,27 +52,33 @@ const books = [
     title: "Book 5", 
     cover: "/covers/background.png", 
     innerCover:"/covers/book-innner.png",
-    content: "リュック",
+        content: ` <h1>リュック</h1> 
+    <p>これはサンプルの本文です。</p> 
+    <p>自由に改行できます。</p> `, 
     link: "/",        // ← 本5の遷移先
     spineColor:"#c0392b"
   },
   { 
     id: 6, 
     title: "Book 6", 
-    cover: "/covers/book1.jpg", 
+    cover: "/covers/book6.png", 
     innerCover:"/covers/book-innner.png",
-    content: "印象マップ",
+        content: ` <h1>印象マップ</h1> 
+    <p>これはサンプルの本文です。</p> 
+    <p>自由に改行できます。</p> `, 
     link: "/",      // ← 本6の遷移先
-    spineColor:"#black"
+    spineColor:"#9bb68f"
   },
   { 
     id: 7, 
     title: "Book 7", 
     cover: "/covers/book7.png", 
     innerCover:"/covers/book-innner.png",
-    content: "自主制作",
+        content: ` <h1>自主制作</h1> 
+    <p>これはサンプルの本文です。</p> 
+    <p>自由に改行できます。</p> `, 
     link: "/",      // ← 本6の遷移先
-    spineColor:"#black"
+    spineColor:"#4c4b4c"
   }
 ];
 
