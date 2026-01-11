@@ -33,56 +33,48 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
   }, []);
 
   /* ---------------- 自動スクロール ---------------- */
-  useEffect(() => {
-    let rafId;
+/* ---------------- 無限スクロール補正（自然版） ---------------- */
+useEffect(() => {
+  let rafId;
 
-    const loop = () => {
-      const el = scrollRef.current;
-      if (el && !userInteracting.current && !isAdjusting.current) {
-        el.scrollLeft += 1.2;
-      }
-      rafId = requestAnimationFrame(loop);
-    };
+  const loop = () => {
+    const el = scrollRef.current;
+    if (!el) return;
 
-    loop();
-    return () => cancelAnimationFrame(rafId);
-  }, []);
+    const third = el.scrollWidth / 3;
+    const view = el.clientWidth;
+
+    // 左に寄りすぎ
+    if (el.scrollLeft < third - view) {
+      el.scrollLeft += 0.6; // ← 微補正
+      lastScrollLeft.current = el.scrollLeft;
+    }
+
+    // 右に寄りすぎ
+    if (el.scrollLeft > third * 2 - view) {
+      el.scrollLeft -= 0.6; // ← 微補正
+      lastScrollLeft.current = el.scrollLeft;
+    }
+
+    rafId = requestAnimationFrame(loop);
+  };
+
+  loop();
+  return () => cancelAnimationFrame(rafId);
+}, []);
 
   /* ---------------- 無限スクロール補正 ---------------- */
  const handleScroll = () => {
   const el = scrollRef.current;
-  if (!el || isAdjusting.current) return;
+  if (!el) return;
 
-  const third = el.scrollWidth / 3;
-  const view = el.clientWidth;
-
-  // tilt
   const delta = el.scrollLeft - lastScrollLeft.current;
   lastScrollLeft.current = el.scrollLeft;
+
   tilt.current = Math.max(-6, Math.min(6, delta * 0.2));
   el.style.setProperty("--tilt", `${tilt.current}deg`);
-
-  // ===== 無限スクロール補正（完全不可視） =====
-  // 左端が視界に入る前
-  if (el.scrollLeft < third - view) {
-    isAdjusting.current = true;
-    requestAnimationFrame(() => {
-      el.scrollLeft += third;
-      lastScrollLeft.current = el.scrollLeft;
-      isAdjusting.current = false;
-    });
-  }
-
-  // 右端が視界に入る前
-  if (el.scrollLeft > third * 2 - view) {
-    isAdjusting.current = true;
-    requestAnimationFrame(() => {
-      el.scrollLeft -= third;
-      lastScrollLeft.current = el.scrollLeft;
-      isAdjusting.current = false;
-    });
-  }
 };
+
 
 
   /* ---------------- 本クリック ---------------- */
