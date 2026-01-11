@@ -209,9 +209,11 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   height: 250px;
 }
 
-.photo2{ 
-  display: center;
+.photo2 {
+  display: flex;
+  justify-content: center; /* 横中央 */
 }
+
 
 .content{
     display: flex;
