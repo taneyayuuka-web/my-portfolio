@@ -75,7 +75,8 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     if (openBookId !== book.id) {
       onOpen(book.id);
     } else {
-      window.location.href = book.link;
+      // React Routerを使って遷移
+      navigate(book.link);
     }
   };
 
