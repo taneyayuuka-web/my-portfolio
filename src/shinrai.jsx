@@ -9,7 +9,7 @@ const Shinrai = () => {
     <article className="case-study">
       {/* 1. ヒーローセクション */}
       <section className="hero-section">
-        <img src="covers/book.png" alt="心蕾" className="hero-img" />
+        <img src="/covers/book.png" alt="心蕾" className="hero-img" />
         <div className="hero-text">
           <h1>心蕾</h1>
           <p>感情を記録し、花を咲かせるアプリ</p>
