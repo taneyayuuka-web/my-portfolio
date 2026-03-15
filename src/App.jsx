@@ -21,7 +21,7 @@ const books = [
   { 
     id: 2, 
     title: "ゲッTONE", 
-    cover: "/covers/gettone.png", 
+    cover: "/covers/book2.png", 
     innerCover:"/covers/book-inner2.png",
     content: `<h1>ゲッTONE</h1><p>TONE株式会社秋季インターンシップ</p>`, 
     link: "/gettone", 
