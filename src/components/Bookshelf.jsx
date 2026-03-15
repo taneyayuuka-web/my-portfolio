@@ -5,6 +5,7 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
   const scrollRef = useRef(null);
   const lastScrollLeft = useRef(0);
   const tilt = useRef(0);
+  const navigate = useNavigate(); // 追加
 
   // 本を3回複製
   const loopedBooks = [...books, ...books, ...books];
@@ -74,7 +75,8 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     if (openBookId !== book.id) {
       onOpen(book.id);
     } else {
-      window.location.href = book.link;
+      // React Routerを使って遷移
+      navigate(book.link);
     }
   };
 
