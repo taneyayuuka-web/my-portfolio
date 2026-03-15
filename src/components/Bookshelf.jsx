@@ -1,14 +1,12 @@
 import { useRef, useEffect } from "react";
-import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function Bookshelf({ books, openBookId, onOpen }) {
   const scrollRef = useRef(null);
   const lastScrollLeft = useRef(0);
   const tilt = useRef(0);
-  const navigate = useNavigate(); // 追加
+  const navigate = useNavigate();
 
-  // 本を3回複製
   const loopedBooks = [...books, ...books, ...books];
 
   /* ---------------- 初期スクロール ---------------- */
@@ -28,36 +26,33 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     init();
   }, []);
 
-  /* ---------------- 無限スクロール補正（ジャンプなし） ---------------- */
- useEffect(() => {
-  let rafId;
-  const SPEED = 0.35; // ← 自動スクロール速度（調整可）
+  /* ---------------- 無限スクロール補正 ---------------- */
+  useEffect(() => {
+    let rafId;
+    const SPEED = 0.35;
 
-  const loop = () => {
-    const el = scrollRef.current;
-    if (!el) return;
+    const loop = () => {
+      const el = scrollRef.current;
+      if (!el) return;
 
-    // ① 自動スクロール
-    el.scrollLeft += SPEED;
+      el.scrollLeft += SPEED;
 
-    const third = el.scrollWidth / 3;
-    const view = el.clientWidth;
+      const third = el.scrollWidth / 3;
+      const view = el.clientWidth;
 
-    // ② 無限ループ補正（ジャンプなし）
-    if (el.scrollLeft < third - view) {
-      el.scrollLeft += third;
-    } else if (el.scrollLeft > third * 2 - view) {
-      el.scrollLeft -= third;
-    }
+      if (el.scrollLeft < third - view) {
+        el.scrollLeft += third;
+      } else if (el.scrollLeft > third * 2 - view) {
+        el.scrollLeft -= third;
+      }
 
-    lastScrollLeft.current = el.scrollLeft;
-    rafId = requestAnimationFrame(loop);
-  };
+      lastScrollLeft.current = el.scrollLeft;
+      rafId = requestAnimationFrame(loop);
+    };
 
-  loop();
-  return () => cancelAnimationFrame(rafId);
-}, []);
-
+    loop();
+    return () => cancelAnimationFrame(rafId);
+  }, []);
 
   /* ---------------- スクロール傾き ---------------- */
   const handleScroll = () => {
@@ -76,7 +71,8 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     if (openBookId !== book.id) {
       onOpen(book.id);
     } else {
-      // React Routerを使って遷移
+      // 遷移前に開いている状態を解除してから遷移する
+      onOpen(null); 
       navigate(book.link);
     }
   };
@@ -92,7 +88,7 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
           const key = `${book.id}-${index}`;
           const isActive = openBookId === book.id;
 
-          const bookElement = (
+          return (
             <div
               key={key}
               className={`book-3d ${isActive ? "active" : ""}`}
@@ -117,10 +113,6 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
               </div>
             </div>
           );
-
-          return isActive
-            ? createPortal(bookElement, document.body)
-            : bookElement;
         })}
       </div>
     </div>
