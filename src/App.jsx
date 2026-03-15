@@ -8,7 +8,8 @@ const books = [
     title: "/covers/title.png", 
     cover: "/covers/book.png", 
     innerCover: "/covers/book-inner.png", 
-    content: `<h1>心蕾</h1><h3>感情記録とクラフト体験で</h3>
+    content: "/covers/title.png"
+`<h1>心蕾</h1><h3>感情記録とクラフト体験で</h3>
 <h3>ストレス解消できるアプリ</h3>
 <p>心蕾は入力もしくは選択した感情から様々な花を咲</p>
 <p>かせるアプリです。咲いた花は塗り絵、ペーパーク</p>
