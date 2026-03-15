@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300; 
 }
 
 .app {
@@ -289,13 +290,32 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 }
 
 .explanation-meta {
-  border-left: 2px solid #eee; /* 線の主張を少し抑える */
+  border-left: 2px solid #eee; 
   padding-left: 20px;
   margin: 15px 0;
 }
 
 .graph p {
-  line-height: 1.8;      /* 行間をゆったりさせる */
-  letter-spacing: 0.03em; /* ほんの少し字間を広げる */
-  color: #444;           /* 真っ黒より少しだけグレーにすると目に優しい */
+  line-height: 1.8;      
+  letter-spacing: 0.03em; 
+  color: #444;          
+}
+
+.graph p {
+  max-width: 650px; 
+  margin: 0 auto;   
+}
+
+.contents p strong {
+  color: #479680; /* 強調したい色 */
+  margin-right: 5px;
+}
+
+.graph-explanation {
+  max-width: 650px;     /* 横幅を絞る */
+  margin: 40px auto;    /* 中央寄せ */
+  text-align: justify;  /* 両端揃えにすると綺麗です */
+  line-height: 1.8;     /* 行間をゆったり */
+  color: #444;          /* ほんの少し柔らかい黒 */
+  font-size: 0.95rem;   /* 少しだけ小さくすると密度が上がり高級感が出ます */
 }
