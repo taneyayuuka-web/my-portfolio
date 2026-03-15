@@ -23,7 +23,7 @@ const Shinrai = () => {
 的に把握する機会は少ないのです。</p>
         </div>
         <div className="visual-content">
-          <img src="data1.png" alt="ストレスの推移" />
+          <img src="/covers/data1.png" alt="ストレスの推移" />
         </div>
       </section>
 
@@ -32,7 +32,7 @@ const Shinrai = () => {
         <h2>Emotion Analysis</h2>
         <div className="color-wheel-container">
           {/* ここに資料6枚目の図を配置 */}
-          <img src="data2.png" alt="感情分析図" />
+          <img src="/covers/data2.png" alt="感情分析図" />
         </div>
       </section>
 
