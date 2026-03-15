@@ -23,16 +23,85 @@ const books = [
     title: "ゲッTONE", 
     cover: "/covers/book2.png", 
     innerCover:"/covers/book-inner2.png",
-    content: `<h1>ゲッTONE</h1><h3></h3>
-    <p>TONE株式会社秋季インターンシップ</p>`, 
+    content: 
+  `<h1>ゲッTONE</h1><h3>写真を撮り、アプリで知り、</h3>
+  <h3>ゲームで定着させる学習</h3>
+  <p>ゲッTONEは工具の画像をAIを通して種類を判別し、</p>
+  <p>判明した種類ごとに使用方法をゲームで学習する</p>
+  <p>アプリです。</p>`, 
     link: "/gettone", 
     spineColor: "#c0392b"
   },
-  { id: 3, title: "玩具業界ポスター", cover: "/covers/book3.png", innerCover:"/covers/book-inner3.png", content: `<h1>玩具業界ポスター</h1>`, link: "/gangu", spineColor:"#386c98" },
-  { id: 4, title: "ピンセット", cover: "/covers/book4.png", innerCover:"/covers/book-inner4.png", content: `<h1>ピンセット</h1>`, link: "/pinset", spineColor:"#dcbb3b" },
-  { id: 5, title: "印象マップ", cover: "/covers/book5.png", innerCover:"/covers/book-inner5.png", content: `<h1>製品分析</h1>`, link: "/ryukku", spineColor:"#9bb68f" },
-  { id: 6, title: "BACKPACK", cover: "/covers/book6.png", innerCover:"/covers/book-inner6.png", content: `<h1>印象マップ</h1>`, link: "/map", spineColor:"#53547b" },
-  { id: 7, title: "自主制作", cover: "/covers/book7.png", innerCover:"/covers/book-inner7.png", content: `<h1>自主制作</h1>`, link: "/jisyu", spineColor:"#4c4b4c" }
+  { 
+    id: 3, title: "玩具業界ポスター", 
+    cover: "/covers/book3.png", 
+    innerCover:"/covers/book-inner3.png", 
+    content: 
+  `<h1>玩具業界ポスター</h1>
+  <h3>一目でわかる、玩具業界</h3>
+  <p>玩具業界の代表の4社をポスターにしました。各</p>
+  <p>会社ごとの目玉となっている商品が大きく描かれ</p>
+  <p>ているため、業界を知らない人でもどのような会</p>
+  <p>社であるか理解することができます。</p>`, 
+    link: "/gangu", 
+    spineColor:"#386c98" 
+  },
+  { 
+    id: 4, title: "ピンセット", 
+    cover: "/covers/book4.png", 
+    innerCover:"/covers/book-inner4.png", 
+    content: 
+  `<h1>ピンセット</h1>
+  <h3>デザインパネルで学習システム提案</h3>
+  <p>ピンセットは、学習を効率的に支援する塾講師向</p>
+  <p>けのシステムです。AIが生徒の苦手を分析し、類
+  <p>似問題の抜粋や制作をおこないます。会社ごとの
+  <p>目玉となっている商品が大きく描かれているため、
+  <p>業界を知らない人でもどのような会社であるか理
+  <p>解することができます。</p>`,
+    link: "/pinset", 
+    spineColor:"#dcbb3b" },
+  { 
+    id: 5, title: "印象マップ", 
+    cover: "/covers/book5.png", 
+    innerCover:"/covers/book-inner5.png", 
+    content: 
+    `<h1>印象マップ</h1>
+  <h3>映像実写化作品に重視されている要素とは</h3>
+  <p>グループ活動で行ったKJ法を個人で行ったAHP法</p>
+  <p>と組み合わせてインフォグラフィクスにしまし</p>
+  <p>た。重要な要素を色や大きさ、イラストでわかり</p>
+  <p>やすいデザインにしました。</p>`, 
+    link: "/ryukku", 
+    spineColor:"#9bb68f" },
+  { 
+    id: 6, 
+    title: "BACKPACK", 
+    cover: "/covers/book6.png", 
+    innerCover:"/covers/book-inner6.png", 
+    content: 
+    `<h1>BACKPACK</h1>
+  <h3>分析して考える、リュックサックのデザイン</h3>
+  <p>「リュックサック」をケーススタディとして、視</p>
+  <p>覚言語に対応する概念の抽出と、抽出した概念を</p>
+  <p>組み合わせることにより、自分なりのリュックサッ</p>
+  <p>クを作成しました。</p>`, 
+    link: "/map", 
+    spineColor:"#53547b" },
+  { 
+    id: 7, title: "自主制作", 
+    cover: "/covers/book7.png", 
+    innerCover:"/covers/book-inner7.png", 
+    content: 
+    `<h1>自主制作</h1>
+  <h3>部活とゲームjam</h3>
+  <p>部活では、気ままに創作イラストを描いています。</p>
+  <p>また、時々大学のGameJamに参加しています。様</p>
+  <p>々な世界観を忠実に表現する必要があることで良</p>
+  <p>い刺激になっています</p>
+    `, 
+    link: "/jisyu", 
+    spineColor:"#4c4b4c" }
 ];
 
 // 補助コンポーネント（export default は付けない）
