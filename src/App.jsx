@@ -8,7 +8,7 @@ const books = [
     title: "心蕾", 
     cover: "/covers/book.png", 
     innerCover: "/covers/book-inner.png", 
-    content: "/covers/title.png"
+    content:
 `<h1>心蕾</h1><h3>感情記録とクラフト体験で</h3>
 <h3>ストレス解消できるアプリ</h3>
 <p>心蕾は入力もしくは選択した感情から様々な花を咲</p>
