@@ -2,11 +2,14 @@ import React from 'react';
 import './Shinrai.css'; // 専用のスタイル
 
 const Shinrai = () => {
+        <header className="header">
+        <h3>Portfolio Taneya Yuuka</h3>
+      </header>
   return (
     <article className="case-study">
       {/* 1. ヒーローセクション */}
       <section className="hero-section">
-        <img src="/public/covers/book-inner.png" alt="心蕾" className="hero-img" />
+        <img src="covers/book.png" alt="心蕾" className="hero-img" />
         <div className="hero-text">
           <h1>心蕾</h1>
           <p>感情を記録し、花を咲かせるアプリ</p>
