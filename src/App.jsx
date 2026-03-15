@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Bookshelf from "./components/Bookshelf";
 import "./index.css";
+import Shinrai from "./Shinrai"; // 作成した詳細ページをインポート
 
 const books = [
   { 
@@ -13,8 +14,8 @@ const books = [
     <p>心蕾は入力もしくは選択した感情から様々な花を</p>
     <p>咲かせるアプリです。咲いた花は塗り絵、ペーパー</p>
     <p>クラフト、立体メモとして作ったり飾ったりして</p>
-    <p>楽しみ、感情を記録します</p> `, 
-    link: "/shinrai.jsx",
+    <p>楽しみ、感情を記録します。</p> `, 
+    link: Shinrai,
     spineColor: "#479680"//背表紙カラー
   },
   { 
