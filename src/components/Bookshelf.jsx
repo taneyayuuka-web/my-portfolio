@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Bookshelf({ books, openBookId, onOpen }) {
   const scrollRef = useRef(null);
