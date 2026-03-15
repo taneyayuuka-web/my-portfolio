@@ -26,17 +26,15 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     init();
   }, []);
 
-  /* ---------------- 無限スクロール補正 ---------------- */
 /* ---------------- 無限スクロール補正（ジャンプなし） ---------------- */
   useEffect(() => {
     let rafId;
     const SPEED = 0.35; 
 
     const loop = () => {
-      // ★ 追加：本が開いている（openBookId が null じゃない）時は自動スクロールを停止
+      // ★ 修正：本が開いている間は、次のフレームを要請せずにループを終了させる
       if (openBookId !== null) {
-        rafId = requestAnimationFrame(loop);
-        return;
+        return; 
       }
 
       const el = scrollRef.current;
@@ -56,12 +54,23 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
       }
 
       lastScrollLeft.current = el.scrollLeft;
+      
+      // 次のフレームを予約
       rafId = requestAnimationFrame(loop);
     };
 
-    loop();
-    return () => cancelAnimationFrame(rafId);
-  }, [openBookId]); // ★ 重要：openBookId が変わるたびに useEffect を再チェックするように設定
+    // 本が閉じている時だけループを開始
+    if (openBookId === null) {
+      rafId = requestAnimationFrame(loop);
+    }
+
+    return () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+    };
+  }, [openBookId]); // openBookIdが変わるたびにクリーンアップして再実行
+
 
   /* ---------------- スクロール傾き ---------------- */
   const handleScroll = () => {
