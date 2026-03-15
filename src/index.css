@@ -29,7 +29,7 @@ body {
   overflow-y: hidden;
   white-space: nowrap;
 
-  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)),
   url("/public/covers/background.png"); /* ← 背景画像 */
 
 
