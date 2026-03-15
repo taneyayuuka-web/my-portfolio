@@ -64,7 +64,7 @@ export default function App() {
         />
       </div>
 
-      <div className="text">
+      <div className="contents">
         <p>profile</p>
         <h1>自己紹介</h1>
       </div>    
