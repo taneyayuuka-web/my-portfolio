@@ -64,12 +64,10 @@ export default function App() {
         />
       </div>
 
-      <div className="contents">
+      
+      <section className="content">  
         <p>profile</p>
-        <h1>自己紹介</h1>
-      </div>    
-        
-      <section className="content">        
+        <h1>自己紹介</h1>      
         <div className="photo">
           <img src="/covers/icon.jpg" alt="my icon" className="photo" />
         </div>
