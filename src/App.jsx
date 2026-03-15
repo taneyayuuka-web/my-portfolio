@@ -23,14 +23,15 @@ const books = [
     title: "ゲッTONE", 
     cover: "/covers/book2.png", 
     innerCover:"/covers/book-inner2.png",
-    content: `<h1>ゲッTONE</h1><p>TONE株式会社秋季インターンシップ</p>`, 
+    content: `<h1>ゲッTONE</h1><h3></h3>
+    <p>TONE株式会社秋季インターンシップ</p>`, 
     link: "/gettone", 
     spineColor: "#c0392b"
   },
   { id: 3, title: "玩具業界ポスター", cover: "/covers/book3.png", innerCover:"/covers/book-inner3.png", content: `<h1>玩具業界ポスター</h1>`, link: "/gangu", spineColor:"#386c98" },
   { id: 4, title: "ピンセット", cover: "/covers/book4.png", innerCover:"/covers/book-inner4.png", content: `<h1>ピンセット</h1>`, link: "/pinset", spineColor:"#dcbb3b" },
-  { id: 5, title: "製品分析", cover: "/covers/book5.png", innerCover:"/covers/book-inner5.png", content: `<h1>製品分析</h1>`, link: "/ryukku", spineColor:"#53547b" },
-  { id: 6, title: "印象マップ", cover: "/covers/book6.png", innerCover:"/covers/book-inner6.png", content: `<h1>印象マップ</h1>`, link: "/map", spineColor:"#9bb68f" },
+  { id: 5, title: "印象マップ", cover: "/covers/book5.png", innerCover:"/covers/book-inner5.png", content: `<h1>製品分析</h1>`, link: "/ryukku", spineColor:"#9bb68f" },
+  { id: 6, title: "BACKPACK", cover: "/covers/book6.png", innerCover:"/covers/book-inner6.png", content: `<h1>印象マップ</h1>`, link: "/map", spineColor:"#53547b" },
   { id: 7, title: "自主制作", cover: "/covers/book7.png", innerCover:"/covers/book-inner7.png", content: `<h1>自主制作</h1>`, link: "/jisyu", spineColor:"#4c4b4c" }
 ];
 
