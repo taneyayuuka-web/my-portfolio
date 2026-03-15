@@ -30,7 +30,7 @@ body {
 
   /* rgbaの最後(0.6)を小さくするとより薄くなります */
   background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
-  url("/public/covers/background.png");
+  url("/covers/background.png");
 
   background-size: cover; /* 画像を画面いっぱいに広げる場合 */
   background-position: center; 
