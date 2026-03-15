@@ -228,3 +228,18 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   position: relative;   /* ← ボタンの基準になる */
   width: 100%;
 }
+
+.content {
+  display: flex;
+  justify-content: center; /* 横方向の中央寄せ */
+  align-items: center;     /* 縦方向の中央寄せ */
+  gap: 60px;               /* 画像とテキストの間の余白を広げる */
+  max-width: 1000px;       /* コンテンツが広がりすぎないように制限 */
+  margin: 0 auto;          /* 画面全体の中央に配置 */
+  padding: 80px 20px;      /* 上下にしっかり余白を作る */
+}
+
+/* テキスト部分を左詰めにしつつ、バランスをとる */
+.explanation {
+  text-align: left;
+}
