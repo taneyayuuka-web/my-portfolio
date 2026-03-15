@@ -243,3 +243,4 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 .explanation {
   text-align: left;
 }
+
