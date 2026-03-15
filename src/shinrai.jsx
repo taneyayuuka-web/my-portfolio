@@ -1,96 +1,47 @@
-import { useState } from "react";
-import Bookshelf from "./components/Bookshelf";
-import "./index.css";
+import React from 'react';
+import './Shinrai.css'; // 専用のスタイル
 
-const books = [
-  { 
-    id: 1, 
-    title: "Book 1", 
-    cover: "/public/covers/book.png", // 表紙 
-    innerCover: "/public/covers/book-inner.png", // 表紙裏 
-    content: "心蕾", //内容
-    link: "./shinrai.jsx", //リンク先
-    spineColor: "#479680"//背表紙カラー
-  },
-  { 
-    id: 2, 
-    title: "Book 2", 
-    cover: "/public/covers/book1.jpg", 
-    innerCover:"/public/covers/book-innner.png",
-    content: "...",
-    link: "/story/design" ,      
-    spineColor: "#c0392b"
-  },
-  { 
-    id: 3, 
-    title: "Book 3", 
-    cover: "/public/covers/book2.png", 
-    innerCover:"/public/covers/book-innner.png",
-    content: "ピンセット\n3回生後期「UXデザイン演習課題」",
-    link: "/story/gallery",      // ← 本3の遷移先
-    spineColor:"#dcbb3b"
-  },
-  { 
-    id: 4, 
-    title: "Book 4", 
-    cover: "/public/covers/book1.jpg",
-    innerCover:"/public/covers/book-innner.png",     
-    content: "...",
-    link: "/story/works",        // ← 本4の遷移先
-    spineColor:"#c0392b"
-  },
-  { 
-    id: 5, 
-    title: "Book 5", 
-    cover: "/public/covers/book1.jpg", 
-    innerCover:"/public/covers/book-innner.png",
-    content: "...",
-    link: "/story/about",        // ← 本5の遷移先
-    spineColor:"#c0392b"
-  },
-  { 
-    id: 6, 
-    title: "Book 6", 
-    cover: "/public/covers/book1.jpg", 
-    innerCover:"/public/covers/book-innner.png",
-    content: "...",
-    link: "/",      // ← 本6の遷移先
-    spineColor:"#000000"
-  }
-];
-
-export default function App() {
-  const [openBookId, setOpenBookId] = useState(null);
-
+const Shinrai = () => {
   return (
-    <>
-      <header className="header">
-        <h3>Portfolio Taneya Yuuka</h3>
-      </header>
-
-      <section class = "content">
-        <div className="profile">
-          <div class="text">
-            <h2>心蕾</h2>
-            <p>profile</p>
-            <p></p>
-          </div>
+    <article className="case-study">
+      {/* 1. ヒーローセクション */}
+      <section className="hero-section">
+        <img src="/public/covers/book-inner.png" alt="心蕾" className="hero-img" />
+        <div className="hero-text">
+          <h1>心蕾</h1>
+          <p>感情を記録し、花を咲かせるアプリ</p>
         </div>
       </section>
 
-      <div className="app">
-        <div className="room-wall"></div>
+      {/* 2. 課題とコンセプト（資料スライド2-3） */}
+      <section className="detail-section grid">
+        <div className="text-content">
+          <h2>Background</h2>
+          <p>現代社会におけるストレスの増加に着目し...</p>
+        </div>
+        <div className="visual-content">
+          <img src="/path-to-graph-image.png" alt="ストレスの推移" />
+        </div>
+      </section>
 
-        <Bookshelf
-          books={books}
-          openBookId={openBookId}
-          onOpen={(id) => setOpenBookId(id)}
-        />
-      </div>
+      {/* 3. 感情の可視化（資料スライド5-6） */}
+      <section className="analysis-section dark-bg">
+        <h2>Emotion Analysis</h2>
+        <div className="color-wheel-container">
+          {/* ここに資料6枚目の図を配置 */}
+          <img src="/path-to-wheel.png" alt="感情分析図" />
+        </div>
+      </section>
 
-      <footer className="footer">
-        <p>© 2026 Taneya Yuuka</p>
-      </footer>
-    </>
+      {/* 4. 制作プロセス（資料スライド9-10） */}
+      <section className="process-section">
+        <h2>Process & Future</h2>
+        <div className="image-gallery">
+          {/* 制作風景や展示写真を並べる */}
+        </div>
+      </section>
+    </article>
   );
-}
+};
+
+export default Shinrai;
