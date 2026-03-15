@@ -80,7 +80,10 @@ export default function App() {
         <div className="photo2">
           <img src="/covers/profile2.png" alt="my icon" className="photoimg" />
         </div>
-        <p>illustratorによる基本のデザイン、方法論による分析、柔軟な発想を行うことができます。</p>
+        <p>illustratorによる基本のデザイン、方法論による分析、柔軟な発想を行うことができます。
+柔軟な発想はプログラミングを学習したことで身についたものであり、試行錯誤をくり返し
+つつ複数ある正解の形に近づいていく思考をデザインに活かしています。分析による、感
+覚的ではない根拠のある論理的なデザインが得意です。</p>
       </section>
 
       <footer className="footer">
