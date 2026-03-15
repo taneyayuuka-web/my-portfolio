@@ -28,9 +28,11 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  min-height: 600px; 
+  width: 100%;
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), /* ← 黒の透過レイヤー */ 
-  url("/public/covers/background.png"); /* ← 背景画像 */
+  url("/covers/background.png"); /* ← 背景画像 */
 
   
   background-position: center; 
