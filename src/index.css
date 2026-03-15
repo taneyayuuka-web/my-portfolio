@@ -24,20 +24,21 @@ body {
 .bookshelf-3d {
   display: flex;
   padding: 20px;
+
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
 
-  /* rgbaの最後(0.6)を小さくするとより薄くなります */
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
-  url("/covers/background.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), /* ← 黒の透過レイヤー */ 
+  url("/public/covers/background.png"); /* ← 背景画像 */
 
-  background-size: cover; /* 画像を画面いっぱいに広げる場合 */
+  
   background-position: center; 
   background-repeat: no-repeat;
-  min-height: 600px; /* ★ 高さを明示的に確保 */
+
   perspective: 1500px;
   transform-style: preserve-3d;
+
   margin: 0 auto;
 
   -ms-overflow-style: none;
