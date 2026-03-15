@@ -287,3 +287,15 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   height: auto;
   margin: 20px 0;
 }
+
+.explanation-meta {
+  border-left: 2px solid #eee; /* 線の主張を少し抑える */
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.graph p {
+  line-height: 1.8;      /* 行間をゆったりさせる */
+  letter-spacing: 0.03em; /* ほんの少し字間を広げる */
+  color: #444;           /* 真っ黒より少しだけグレーにすると目に優しい */
+}
