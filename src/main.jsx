@@ -13,26 +13,90 @@ import Jisyu from './jisyu.jsx'
 
 import Login from './Login.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
+
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        {/* ログイン画面 */}
+
+        {/* パスワード入力ページ */}
         <Route path="/login" element={<Login />} />
 
-        {/* 認証が必要なルートをグループ化してスッキリさせる */}
-        <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<App />} />
-          <Route path="/shinrai" element={<Shinrai />} />
-          <Route path="/gettone" element={<Gettone />} />
-          <Route path="/gangu" element={<Gangu />} />
-          <Route path="/pinset" element={<Pinset />} />
-          <Route path="/ryukku" element={<Ryukku />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/jisyu" element={<Jisyu />} />
-        </Route>
+        {/* ここから下は全部パスワード保護 */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <App />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/shinrai"
+          element={
+            <ProtectedRoute>
+              <Shinrai />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/gettone"
+          element={
+            <ProtectedRoute>
+              <Gettone />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/gangu"
+          element={
+            <ProtectedRoute>
+              <Gangu />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/pinset"
+          element={
+            <ProtectedRoute>
+              <Pinset />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/ryukku"
+          element={
+            <ProtectedRoute>
+              <Ryukku />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/map"
+          element={
+            <ProtectedRoute>
+              <Map />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/jisyu"
+          element={
+            <ProtectedRoute>
+              <Jisyu />
+            </ProtectedRoute>
+          }
+        />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
