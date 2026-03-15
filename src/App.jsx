@@ -8,7 +8,12 @@ const books = [
     title: "心蕾", 
     cover: "/covers/book.png", 
     innerCover: "/covers/book-inner.png", 
-    content: `<h1>心蕾</h1><p>3回生前期授業「アプリデザイン総合演習」</p>`, 
+    content: `<h1>心蕾</h1><h3>感情記録とクラフト体験で
+ストレス解消できるアプリ</h3><p>
+心蕾は入力もしくは選択した感情から様々な
+花を咲かせるアプリです。咲いた花は塗り絵、
+ペーパークラフト、立体メモとして作ったり飾っ
+たりして楽しみ、感情を記録します。</p>`, 
     link: "/shinrai",
     spineColor: "#479680"
   },
