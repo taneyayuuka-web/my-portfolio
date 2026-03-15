@@ -64,28 +64,37 @@ export default function App() {
         />
       </div>
 
-      <div className="text">
-        <p>profile</p>
-        <h1>自己紹介</h1>
-      </div>    
-        
-      <section className="content">        
-        <div className="photo">
-          <img src="/covers/icon.jpg" alt="my icon" className="photo" />
-        </div>
-        <div className="contents">
-          <p>taneya yuuka</p>
-          <h1>種谷 有香</h1>
-          <h3>和歌山大学システム工学部システム工学科</h3>
-          <h3>クロスリアリティ・情報デザインメジャー</h3>
-          <h3>デザインシステム計画研究室</h3>
-          <p>●部活動　		文化系デジタル創作活動　「mycom」　部長</p>
-          <p>●アルバイト　　		塾講師</p>
-          <p>●資格　		色彩検定3級（2024年度11月）　		色彩検定2級（2025年度6月）		基本情報技術者試験（2026年2月受験）合格見込み		　※CBT試験にてA科目B科目共に600点以上取得</p>
-          <p>●趣味　　		ニードルフェルト　		料理（練習中です）</p>
-          <p>●特技　		似顔絵を描くこと</p>
-        </div>
-      </section>
+ {/* --- タイトル部分 --- */}
+<div className="text">
+  <p style={{ color: '#888', margin: 0 }}>profile</p>
+  <h1 style={{ fontSize: '2rem', margin: '5px 0' }}>自己紹介</h1>
+</div>     
+  
+{/* --- メインコンテンツ --- */}
+<section className="content">        
+  <div className="photo">
+    {/* CSSで .photo { width: 300px; } などに設定しておくと安定します */}
+    <img src="/covers/icon.jpg" alt="my icon" style={{ width: '100%', borderRadius: '10px' }} />
+  </div>
+  
+  <div className="contents">
+    <p style={{ color: '#666', marginBottom: '4px' }}>taneya yuuka</p>
+    <h1>種谷 有香</h1>
+    
+    <div style={{ marginBottom: '20px', borderLeft: '3px solid #ccc', paddingLeft: '15px' }}>
+      <h3>和歌山大学システム工学部システム工学科</h3>
+      <h3>クロスリアリティ・情報デザインメジャー</h3>
+      <h3>デザインシステム計画研究室</h3>
+    </div>
+
+    <p><strong>● 部活動</strong>　文化系デジタル創作活動「mycom」部長</p>
+    <p><strong>● アルバイト</strong>　塾講師</p>
+    <p><strong>● 資格</strong>　色彩検定2級・3級、基本情報技術者試験（合格見込み）</p>
+    <p><strong>● 趣味</strong>　ニードルフェルト、料理（練習中！）</p>
+    <p><strong>● 特技</strong>　似顔絵を描くこと</p>
+  </div>
+</section>
+
 
       <section className="graph">
         <h2>システムによる効率的かつ的確なデザイン開発を目指して</h2>

@@ -229,18 +229,61 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   width: 100%;
 }
 
+/* 自己紹介セクション全体を中央へ */
 .content {
   display: flex;
-  justify-content: center; /* 横方向の中央寄せ */
-  align-items: center;     /* 縦方向の中央寄せ */
-  gap: 60px;               /* 画像とテキストの間の余白を広げる */
-  max-width: 1000px;       /* コンテンツが広がりすぎないように制限 */
-  margin: 0 auto;          /* 画面全体の中央に配置 */
-  padding: 80px 20px;      /* 上下にしっかり余白を作る */
+  justify-content: center; /* 横の中央 */
+  align-items: flex-start; /* アイコンの頭とテキストの頭を揃える */
+  gap: 60px;               /* アイコンと文字の間隔 */
+  max-width: 1100px;
+  margin: 50px auto;       /* 上下に余白を作りつつ中央寄せ */
+  padding: 0 40px;
 }
 
-/* テキスト部分を左詰めにしつつ、バランスをとる */
-.explanation {
+/* テキストが入っている右側のボックス */
+.contents {
+  flex: 1;
   text-align: left;
 }
 
+/* タイトル部分（profile / 自己紹介）も中央へ */
+.text {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+/* 各項目の見栄え調整 */
+.contents h1 {
+  margin: 5px 0 10px 0;
+  font-size: 2.4rem;
+}
+
+.contents h3 {
+  margin: 0;
+  color: #444;
+  font-size: 1.1rem;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+/* ●部活動 などの箇条書きを見やすく */
+.contents p {
+  margin: 12px 0;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* 下のグラフセクションもついでに中央寄せ */
+.graph {
+  text-align: center;
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.photoimg {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
