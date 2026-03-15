@@ -97,8 +97,8 @@ export default function App() {
 
 
       <section className="graph">
-        <h1>システムによる効率的かつ的確なデザイン開発を目指して</h1>
-        <h1>今、できること</h1>
+        <h1>システムによる効率的かつ的確なデザイン開発を</h1>
+        <h1>目指して</h1>
         <div className="photo2">
           <img src="/covers/profile2.png" alt="my icon" className="photoimg" />
         </div>
