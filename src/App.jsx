@@ -130,10 +130,6 @@ export default function App() {
         />
       </div>
 
-<div className="scroll-container">
-    <img src="/covers/book.png" className="scrolling-book" alt="scrolling book" />
-</div>
-
  {/* --- タイトル部分 --- */}
 <div className="text">
   <p style={{ color: '#888', margin: 0 }}>profile</p>
@@ -141,10 +137,12 @@ export default function App() {
 </div>     
   
 {/* --- メインコンテンツ --- */}
-<section className="content">        
-  <div className="photo">
-    {/* CSSで .photo { width: 300px; } などに設定しておくと安定します */}
-    <img src="/covers/icon.jpg" alt="my icon" style={{ width: '100%', borderRadius: '10px' }} />
+<section className="content">   
+  <div className="scroll-container">  
+      <div className="photo">
+        {/* CSSで .photo { width: 300px; } などに設定しておくと安定します */}
+        <img src="/covers/icon.jpg" alt="my icon" style={{ width: '100%', borderRadius: '10px' }} />
+    </div>
   </div>
   
   <div className="contents">
