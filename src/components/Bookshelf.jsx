@@ -81,7 +81,7 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
   }, [openBookId]); // openBookIdが変わるたびにクリーンアップして再実行
 
 
-  /* ---------------- スクロール傾き ---------------- */
+  /* ---------------- スクロール傾き ---------------- 
   const handleScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
@@ -92,6 +92,8 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     tilt.current = Math.max(-6, Math.min(6, delta * 0.2));
     el.style.setProperty("--tilt", `${tilt.current}deg`);
   };
+  */
+  const handleScroll = () => {};
 
   /* ---------------- 本クリック ---------------- */
   const handleClick = (book) => {
