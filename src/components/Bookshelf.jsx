@@ -39,7 +39,16 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
 
       const el = scrollRef.current;
       if (!el) return;
-
+      
+      console.log(
+        "scrollWidth:",
+        el.scrollWidth,
+        "clientWidth:",
+        el.clientWidth,
+        "scrollLeft:",
+        el.scrollLeft
+      );
+      
       // ① 自動スクロール
       el.scrollLeft += SPEED;
 
