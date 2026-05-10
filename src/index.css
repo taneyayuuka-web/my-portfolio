@@ -45,6 +45,15 @@ body {
 
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+
+  /* ...既存のコード... */
+  perspective: 2000px; /* 少し遠目に設定して歪みを抑える */
+  min-height: 650px;   /* 本の高さ(540px)＋余白分を確保して、画面サイズが変わっても潰れないようにする */
+  display: flex;
+  align-items: center; /* 垂直方向の中央揃え */
+
+
 }
 
 .bookshelf-3d::-webkit-scrollbar {
