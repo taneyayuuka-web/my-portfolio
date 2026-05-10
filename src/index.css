@@ -26,8 +26,7 @@ body {
   display: flex;
   padding: 20px;
 
-  overflow-x: auto;
-  overflow-y: hidden;
+
   white-space: nowrap;
 
   background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)),
@@ -52,6 +51,10 @@ body {
   align-items: center; /* 垂直方向の中央揃え */
 
 
+}
+
+.bookshelf-3d {
+  width: max-content;
 }
 
 .bookshelf-3d::-webkit-scrollbar {
@@ -348,4 +351,13 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   background-repeat: repeat-x;
 }
 
+.bookshelf-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  scrollbar-width: none;
+}
 
+.bookshelf-scroll::-webkit-scrollbar {
+  display: none;
+}
