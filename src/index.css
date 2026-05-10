@@ -55,7 +55,6 @@ body {
     transform 0.4s ease,
     box-shadow 0.25s ease-out;
 
-  overflow: visible;
   cursor: pointer;
 }
 
@@ -73,7 +72,7 @@ body {
   position: absolute;
   height: 100%;
   left: var(--book-thickness);
-  width: calc(100% - var(--book-thickness));
+  width: 120%;
   transform-origin: center left;
   transition: transform 0.6s ease;
   z-index: 5;
@@ -128,7 +127,7 @@ body {
 .book-pages {
   position: absolute;
   left: var(--book-thickness);
-  width: calc(100% - var(--book-thickness));
+  width: 105%;
   height: 92.5%;
   background: #fffdf8;
   transform: none;
