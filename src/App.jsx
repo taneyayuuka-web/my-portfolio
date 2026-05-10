@@ -5,7 +5,7 @@ import "./index.css";
 const books = [
   { 
     id: 1, 
-    title: "心o蕾", 
+    title: "心蕾", 
     cover: "/covers/book.png", 
     innerCover: "/covers/book-inner.png", 
     content:
