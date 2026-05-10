@@ -326,3 +326,14 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   color: #444;          /* ほんの少し柔らかい黒 */
   font-size: 0.95rem;   /* 少しだけ小さくすると密度が上がり高級感が出ます */
 }
+
+.scrolling-book {
+    width: 100px;
+    position: absolute;
+    animation: scroll-left 10s linear infinite; /* 10秒かけてループ */
+}
+
+@keyframes scroll-left {
+    from { left: 100%; } /* 右端からスタート */
+    to { left: -20%; }   /* 左端に消えるまで */
+}
