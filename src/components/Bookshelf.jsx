@@ -91,12 +91,19 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
   };
 
   return (
-    <div className="bookshelf-wrapper">
-      <div
-        className="bookshelf-3d"
-        ref={scrollRef}
-        onScroll={handleScroll}
-      >
+    return (
+  <div className="bookshelf-wrapper">
+
+    {/* スクロール専用 */}
+    <div
+      className="bookshelf-scroll"
+      ref={scrollRef}
+      onScroll={handleScroll}
+    >
+
+      {/* 3D専用 */}
+      <div className="bookshelf-3d">
+
         {loopedBooks.map((book, index) => {
           const key = `${book.id}-${index}`;
           const isActive = openBookId === book.id;
@@ -108,6 +115,7 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
               onClick={() => handleClick(book)}
             >
               <div className="book-inner">
+
                 <div
                   className="book-spine"
                   style={{ backgroundColor: book.spineColor }}
@@ -117,17 +125,25 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
                   <div className="book-cover-inner">
                     <img src={book.innerCover} alt="" />
                   </div>
+
                   <img src={book.cover} alt="" />
                 </div>
 
-                <div className="book-pages" dangerouslySetInnerHTML={{ __html: book.content }} ></div>
+                <div
+                  className="book-pages"
+                  dangerouslySetInnerHTML={{ __html: book.content }}
+                />
 
                 <div className="book-back" />
+
               </div>
             </div>
           );
         })}
+
       </div>
     </div>
-  );
+  </div>
+);
+
 }
