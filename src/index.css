@@ -71,7 +71,7 @@ body {
 
 .book-cover {
   position: absolute;
-  width: 400px;
+  width: 600px;
   height: 540px;
   left: var(--book-thickness);
   transform-origin: center left;
