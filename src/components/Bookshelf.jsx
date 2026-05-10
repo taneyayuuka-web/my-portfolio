@@ -11,6 +11,7 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
 
   /* ---------------- 初期スクロール ---------------- */
   useEffect(() => {
+    console.log("effect start", openBookId);
     const el = scrollRef.current;
     if (!el) return;
 
@@ -28,6 +29,7 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
 
 /* ---------------- 無限スクロール補正（ジャンプなし） ---------------- */
   useEffect(() => {
+    console.log("mugen", openBookId);
     let rafId;
     const SPEED = 0.35; 
 
