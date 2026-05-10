@@ -17,7 +17,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: #FAF5E9;
-  transform: none;
+  transform: translateZ(-200px);
   z-index: -1;
 }
 
@@ -66,7 +66,7 @@ body {
   position: absolute;
   height: 100%;
   left: var(--book-thickness);
-  width: calc(100% - var(--book-thickness));
+  width: 120%;
   transform-origin: center left;
   transition: transform 0.6s ease;
   z-index: 5;
@@ -120,8 +120,8 @@ body {
   transform: none;
   padding: 20px;
   border-radius: 3px;
-    width: calc(100% - var(--book-thickness));
-  box-sizing: border-box;
+  z-index: 1;
+  transform: translateZ(-1px);
 }
 
 /* 裏表紙 */
@@ -133,7 +133,6 @@ body {
   transform: none;
   border-radius: 3px;
   z-index: 0;
-  height: 100%;
 }
 
 /* 背表紙 */
@@ -149,10 +148,10 @@ body {
   z-index: 3;
 }
 
-/* 選択状態 
+/* 選択状態*/ 
 .book-3d.active {
 transform: translateZ(120px) rotateY(var(--tilt, 0deg));
-}*/
+}
 
 .book-3d.active .book-cover {
   transform: rotateY(-140deg) !important;
