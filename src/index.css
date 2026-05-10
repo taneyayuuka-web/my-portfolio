@@ -34,7 +34,7 @@ body {
   white-space: nowrap;
 
   perspective: 2000px;
-  transform-style: preserve-3d;
+  overflow: hidden;
 
   min-height: 650px;
 
@@ -52,6 +52,7 @@ body {
   height: 540px;
   position: relative;
   transform-style: preserve-3d;
+  will-change: transform;
   flex-shrink: 0;
   transform-origin: center center;
   margin-right: 240px;
