@@ -138,11 +138,10 @@ export default function App() {
   
 {/* --- メインコンテンツ --- */}
 <section className="content">   
-  <div className="scroll-container">  
-      <div className="photo">
-        {/* CSSで .photo { width: 300px; } などに設定しておくと安定します */}
-        <img src="/covers/icon.jpg" alt="my icon" style={{ width: '100%', borderRadius: '10px' }} />
-    </div>
+       
+  <div className="photo">
+    {/* CSSで .photo { width: 300px; } などに設定しておくと安定します */}
+    <img src="/covers/icon.jpg" alt="my icon" style={{ width: '100%', borderRadius: '10px' }} />
   </div>
   
   <div className="contents">
