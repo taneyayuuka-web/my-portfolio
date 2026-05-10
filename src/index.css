@@ -23,7 +23,9 @@ body {
 
 /* 本棚 */
 .bookshelf-3d {
-  display: inline-flex;
+  display: flex;
+  
+  flex-wrap: nowrap;
 
   width: max-content;
 
@@ -353,6 +355,7 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 
   background-repeat: repeat-x;
   background-position: left top;
+  white-space: nowrap;
 }
 
 .bookshelf-scroll::-webkit-scrollbar {
