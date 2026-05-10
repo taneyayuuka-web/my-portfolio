@@ -337,3 +337,32 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
     from { left: 100%; } /* 右端からスタート */
     to { left: -20%; }   /* 左端に消えるまで */
 }
+
+/* 本が流れるコンテナ（背景を横に読ませる土台） */
+.scroll-container {
+  width: 100%;
+  height: 150px; /* 本の大きさに合わせて調整 */
+  overflow: hidden; /* 枠外にはみ出た本を隠す */
+  position: relative;
+  background-image: url("/path/to/your/background.jpg"); /* 背景画像がある場合 */
+  background-repeat: repeat-x;
+}
+
+/* 本自体の動き */
+.scrolling-book {
+  height: 100px; /* 本のサイズ */
+  position: absolute;
+  bottom: 10px;
+  /* アニメーション：名前 時間 線形に 無限に */
+  animation: scroll-left 15s linear infinite;
+}
+
+/* 右から左へ流れるアニメーションの定義 */
+@keyframes scroll-left {
+  0% {
+    left: 100%; /* 画面の右端からスタート */
+  }
+  100% {
+    left: -150px; /* 画面の左端へ消える（本の幅分マイナスにする） */
+  }
+}
