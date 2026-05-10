@@ -34,7 +34,8 @@ body {
   url("/public/covers/background.png"); /* ← 背景画像 */
 
 
-  
+  background-size: cover;      /* 画面いっぱいに広げる */
+  background-attachment: fixed; /* スクロールしても背景を固定する */
   background-position: center; 
   background-repeat: no-repeat;
 
