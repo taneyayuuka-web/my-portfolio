@@ -349,13 +349,3 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 }
 
 
-.bookshelf-scroll {
-  overflow-x: auto;
-  overflow-y: hidden;
-  width: 100%;
-  scrollbar-width: none;
-}
-
-.bookshelf-scroll::-webkit-scrollbar {
-  display: none;
-}
