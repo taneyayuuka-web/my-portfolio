@@ -24,24 +24,19 @@ body {
 /* 本棚 */
 .bookshelf-3d {
   display: flex;
+
+  width: max-content;
+
   padding: 20px;
 
   white-space: nowrap;
 
-  perspective: 1500px;
+  perspective: 2000px;
   transform-style: preserve-3d;
 
-  margin: 0 auto;
+  min-height: 650px;
 
-  background-repeat: repeat-x;
-
-  /* ...既存のコード... */
-  perspective: 2000px; /* 少し遠目に設定して歪みを抑える */
-  min-height: 650px;   /* 本の高さ(540px)＋余白分を確保して、画面サイズが変わっても潰れないようにする */
-  display: flex;
-  align-items: center; /* 垂直方向の中央揃え */
-
-
+  align-items: center;
 }
 
 
