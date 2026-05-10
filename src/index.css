@@ -347,3 +347,12 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   background-image: url("/path/to/your/background.jpg"); /* 背景画像がある場合 */
   background-repeat: repeat-x;
 }
+
+
+.bookshelf-3d {
+  scroll-behavior: auto;
+}
+
+.book-3d {
+  cursor: pointer;
+}
