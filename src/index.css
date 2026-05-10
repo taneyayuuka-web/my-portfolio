@@ -33,11 +33,7 @@ body {
   background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)),
   url("/public/covers/background.png"); /* ← 背景画像 */
 
-
-  background-size: cover;      /* 画面いっぱいに広げる */
-  background-attachment: fixed; /* スクロールしても背景を固定する */
-  background-position: center; 
-  background-repeat: no-repeat;
+  background-position: left top;
 
   perspective: 1500px;
   transform-style: preserve-3d;
@@ -47,6 +43,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 
+  background-repeat: repeat-x;
 
   /* ...既存のコード... */
   perspective: 2000px; /* 少し遠目に設定して歪みを抑える */
