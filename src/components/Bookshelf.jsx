@@ -90,8 +90,8 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     }
   };
 
+
   return (
-    return (
   <div className="bookshelf-wrapper">
 
     {/* スクロール専用 */}
