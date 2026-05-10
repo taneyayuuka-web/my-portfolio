@@ -26,22 +26,12 @@ body {
   display: flex;
   padding: 20px;
 
-  overflow-x: auto;
-  overflow-y: hidden;
   white-space: nowrap;
-
-  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)),
-  url("/public/covers/background.png"); /* ← 背景画像 */
-
-  background-position: left top;
 
   perspective: 1500px;
   transform-style: preserve-3d;
 
   margin: 0 auto;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 
   background-repeat: repeat-x;
 
