@@ -130,6 +130,10 @@ export default function App() {
         />
       </div>
 
+<div className="scroll-container">
+    <img src="/covers/book.png" className="scrolling-book" alt="scrolling book" />
+</div>
+
  {/* --- タイトル部分 --- */}
 <div className="text">
   <p style={{ color: '#888', margin: 0 }}>profile</p>
