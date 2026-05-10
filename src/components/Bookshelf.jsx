@@ -14,7 +14,21 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     const el = scrollRef.current;
     if (!el) return;
 
-    const init = () => {
+    console.log("WIDTH CHECK");
+    console.log("scrollWidth", el.scrollWidth);
+    console.log("clientWidth", el.clientWidth);
+
+  const timer = setInterval(() => {
+    el.scrollLeft += 10;
+
+    console.log("moving", el.scrollLeft);
+  }, 100);
+
+  return () => clearInterval(timer);
+}, []);
+
+    /*
+   const init = () => {
       if (el.scrollWidth > el.clientWidth) {
         const third = el.scrollWidth / 3;
         el.scrollLeft = third;
@@ -24,7 +38,7 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
       }
     };
     init();
-  }, []);
+  }, []);/*
 
 /* ---------------- 無限スクロール補正（ジャンプなし） ---------------- */
   useEffect(() => {

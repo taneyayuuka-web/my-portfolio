@@ -47,18 +47,19 @@ body {
 }
 
 /* 本全体 */
-.book-3d {
-  width: 360px;
-  height: 540px;
-  position: relative;
-  transform-style: preserve-3d;
-  will-change: transform;
-  flex-shrink: 0;
-  transform-origin: center center;
-  margin-right: 240px;
-  transition: box-shadow 0.25s ease-out;
-  /*transform: rotateY(var(--tilt, 0deg));*/
-  transform: none;
+.bookshelf-3d {
+  display: flex;
+  flex-wrap: nowrap;
+
+  width: fit-content;
+
+  min-width: max-content;
+
+  padding: 20px;
+
+  min-height: 650px;
+
+  align-items: center;
 }
 
 /* 本の内側 */
