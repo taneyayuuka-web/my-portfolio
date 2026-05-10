@@ -347,22 +347,3 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
   background-image: url("/path/to/your/background.jpg"); /* 背景画像がある場合 */
   background-repeat: repeat-x;
 }
-
-/* 本自体の動き */
-.scrolling-book {
-  height: 100px; /* 本のサイズ */
-  position: absolute;
-  bottom: 10px;
-  /* アニメーション：名前 時間 線形に 無限に */
-  animation: scroll-left 15s linear infinite;
-}
-
-/* 右から左へ流れるアニメーションの定義 */
-@keyframes scroll-left {
-  0% {
-    left: 100%; /* 画面の右端からスタート */
-  }
-  100% {
-    left: -150px; /* 画面の左端へ消える（本の幅分マイナスにする） */
-  }
-}
