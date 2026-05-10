@@ -27,49 +27,44 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
   }, []);
 
 /* ---------------- 無限スクロール補正（ジャンプなし） ---------------- */
+/* ---------------- 無限スクロール補正（ジャンプなし） ---------------- */
   useEffect(() => {
     let rafId;
-    const SPEED = 0.35; 
+
+    const SPEED = 0.35;
 
     const loop = () => {
-      // ★ 修正：本が開いている間は、次のフレームを要請せずにループを終了させる
-      if (openBookId !== null) {
-        return; 
-      }
-
       const el = scrollRef.current;
       if (!el) return;
 
-      // ① 自動スクロール
-      el.scrollLeft += SPEED;
+      // 本が閉じている時だけスクロール
+      if (openBookId === null) {
+        el.scrollLeft += SPEED;
 
-      const third = el.scrollWidth / 3;
-      const view = el.clientWidth;
+        const third = el.scrollWidth / 3;
+        const view = el.clientWidth;
 
-      // ② 無限ループ補正
-      if (el.scrollLeft < third - view) {
-        el.scrollLeft += third;
-      } else if (el.scrollLeft > third * 2 - view) {
-        el.scrollLeft -= third;
+        // 無限ループ補正
+        if (el.scrollLeft < third - view) {
+          el.scrollLeft += third;
+        } else if (el.scrollLeft > third * 2 - view) {
+          el.scrollLeft -= third;
+        }
+
+        lastScrollLeft.current = el.scrollLeft;
       }
 
-      lastScrollLeft.current = el.scrollLeft;
-      
-      // 次のフレームを予約
+      // ← 常に次フレームを登録する
       rafId = requestAnimationFrame(loop);
     };
 
-    // 本が閉じている時だけループを開始
-    if (openBookId === null) {
-      rafId = requestAnimationFrame(loop);
-    }
+    rafId = requestAnimationFrame(loop);
 
     return () => {
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-      }
+      cancelAnimationFrame(rafId);
     };
-  }, [openBookId]); // openBookIdが変わるたびにクリーンアップして再実行
+  }, [openBookId]);
+
 
 
   /* ---------------- スクロール傾き ---------------- */
