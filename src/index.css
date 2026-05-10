@@ -24,10 +24,10 @@ body {
 /* 本棚 */
 .bookshelf-3d {
   display: flex;
-  
+
   flex-wrap: nowrap;
 
-  width: max-content;
+  width: fit-content;
 
   padding: 20px;
 
