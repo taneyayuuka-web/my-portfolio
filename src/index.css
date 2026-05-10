@@ -56,7 +56,7 @@ body {
     box-shadow 0.25s ease-out;
 
   cursor: pointer;
-
+  transform: translateZ(0);
 }
 
 /* 本の内側 */
