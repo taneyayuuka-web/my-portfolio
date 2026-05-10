@@ -22,23 +22,12 @@ body {
 }
 
 /* 本棚 */
-.bookshelf-3d {
+.bookshelf-row {
   display: flex;
-
-  flex-wrap: nowrap;
-
-  width: fit-content;
-
+  width: max-content;
   padding: 20px;
-
-  white-space: nowrap;
-
-  perspective: 2000px;
-  overflow: hidden;
-
-  min-height: 650px;
-
   align-items: center;
+  min-height: 650px;
 }
 
 
@@ -60,6 +49,7 @@ body {
   min-height: 650px;
 
   align-items: center;
+  perspective: 2000px;
 }
 
 /* 本の内側 */
@@ -342,8 +332,11 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 
 .bookshelf-scroll {
   width: 100%;
+
   overflow-x: scroll;
   overflow-y: hidden;
+
+  white-space: nowrap;
 
   scrollbar-width: none;
 
@@ -358,7 +351,6 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 
   background-repeat: repeat-x;
   background-position: left top;
-  white-space: nowrap;
 }
 
 .bookshelf-scroll::-webkit-scrollbar {
