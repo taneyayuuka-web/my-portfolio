@@ -121,14 +121,29 @@ export default function App() {
         <h3>Portfolio Taneya Yuuka</h3>
       </header>
 
-      <div className="app">
+      {/* --- ここから追加：自動スクロールする本のコンテナ --- */}
+      <div className="scrolling-container">
+        <div className="scrolling-track">
+          {/* 本の画像を2回並べることでループを途切れなくします */}
+          {[...books, ...books].map((book, index) => (
+            <img 
+              key={index} 
+              src={book.cover} 
+              alt={book.title} 
+              className="scrolling-item" 
+            />
+          ))}
+        </div>
+      </div>
+      {/* --- ここまで追加 --- */}
+      /*<div className="app">
         <div className="room-wall"></div>
         <Bookshelf
           books={books}
           openBookId={openBookId}
           onOpen={(id) => setOpenBookId(id)}
         />
-      </div>
+      /*</div>
 
  {/* --- タイトル部分 --- */}
 <div className="text">
