@@ -349,3 +349,26 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 }
 
 
+.bookshelf-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.bookshelf-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.bookshelf-3d {
+  display: flex;
+  width: max-content;
+
+  padding: 20px;
+
+  perspective: 2000px;
+  transform-style: preserve-3d;
+
+  min-height: 650px;
+  align-items: center;
+}
