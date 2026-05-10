@@ -1,116 +1,119 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Bookshelf from "./components/Bookshelf";
 import "./index.css";
 
 const books = [
-  {
-    id: 1,
-    title: "心蕾",
-    cover: "/covers/book.png",
-    innerCover: "/covers/book-inner.png",
-    content: "content",
+  { 
+    id: 1, 
+    title: "心蕾", 
+    cover: "/covers/book.png", 
+    innerCover: "/covers/book-inner.png", 
+    content:
+`<h1>心蕾</h1><h3>感情記録とクラフト体験で</h3>
+<h3>ストレス解消できるアプリ</h3>
+<p>心蕾は入力もしくは選択した感情から様々な花を咲</p>
+<p>かせるアプリです。咲いた花は塗り絵、ペーパーク</p>
+<p>ラフト、立体メモとして作ったり飾ったりして楽し</p>
+<p>み、感情を記録します。</p>`, 
+    link: "/shinrai",
     spineColor: "#479680"
   },
-  {
-    id: 2,
-    title: "ゲッTONE",
-    cover: "/covers/book2.png",
-    innerCover: "/covers/book-inner2.png",
-    content: "content",
+  { 
+    id: 2, 
+    title: "ゲッTONE", 
+    cover: "/covers/book2.png", 
+    innerCover:"/covers/book-inner2.png",
+    content: 
+  `<h1>ゲッTONE</h1><h3>写真を撮り、アプリで知り、</h3>
+  <h3>ゲームで定着させる学習</h3>
+  <p>ゲッTONEは工具の画像をAIを通して種類を判別し、</p>
+  <p>判明した種類ごとに使用方法をゲームで学習する</p>
+  <p>アプリです。</p>`, 
+    link: "/gettone", 
     spineColor: "#c0392b"
   },
-  {
-    id: 3,
-    title: "玩具業界ポスター",
-    cover: "/covers/book3.png",
-    innerCover: "/covers/book-inner3.png",
-    content: "content",
-    spineColor: "#386c98"
+  { 
+    id: 3, title: "玩具業界ポスター", 
+    cover: "/covers/book3.png", 
+    innerCover:"/covers/book-inner3.png", 
+    content: 
+  `<h1>玩具業界ポスター</h1>
+  <h3>一目でわかる、玩具業界</h3>
+  <p>玩具業界の代表の4社をポスターにしました。各</p>
+  <p>会社ごとの目玉となっている商品が大きく描かれ</p>
+  <p>ているため、業界を知らない人でもどのような会</p>
+  <p>社であるか理解することができます。</p>`, 
+    link: "/gangu", 
+    spineColor:"#386c98" 
   },
-  {
-    id: 4,
-    title: "ピンセット",
-    cover: "/covers/book4.png",
-    innerCover: "/covers/book-inner4.png",
-    content: "content",
-    spineColor: "#dcbb3b"
-  },
-  {
-    id: 5,
-    title: "印象マップ",
-    cover: "/covers/book5.png",
-    innerCover: "/covers/book-inner5.png",
-    content: "content",
-    spineColor: "#9bb68f"
-  },
-  {
-    id: 6,
-    title: "BACKPACK",
-    cover: "/covers/book6.png",
-    innerCover: "/covers/book-inner6.png",
-    content: "content",
-    spineColor: "#53547b"
-  }
+  { 
+    id: 4, title: "ピンセット", 
+    cover: "/covers/book4.png", 
+    innerCover:"/covers/book-inner4.png", 
+    content: 
+  `<h1>ピンセット</h1>
+  <h3>デザインパネルで学習システム提案</h3>
+  <p>ピンセットは、学習を効率的に支援する塾講師向</p>
+  <p>けのシステムです。AIが生徒の苦手を分析し、類
+  <p>似問題の抜粋や制作をおこないます。</p>`,
+    link: "/pinset", 
+    spineColor:"#dcbb3b" },
+  { 
+    id: 5, title: "印象マップ", 
+    cover: "/covers/book5.png", 
+    innerCover:"/covers/book-inner5.png", 
+    content: 
+    `<h1>印象マップ</h1>
+  <h3>映像実写化作品に重視されている要素とは</h3>
+  <p>グループ活動で行ったKJ法を個人で行ったAHP法</p>
+  <p>と組み合わせてインフォグラフィクスにしまし</p>
+  <p>た。重要な要素を色や大きさ、イラストでわかり</p>
+  <p>やすいデザインにしました。</p>`, 
+    link: "/ryukku", 
+    spineColor:"#9bb68f" },
+  { 
+    id: 6, 
+    title: "BACKPACK", 
+    cover: "/covers/book6.png", 
+    innerCover:"/covers/book-inner6.png", 
+    content: 
+    `<h1>BACKPACK</h1>
+  <h3>分析して考える、リュックサックのデザイン</h3>
+  <p>「リュックサック」をケーススタディとして、視</p>
+  <p>覚言語に対応する概念の抽出と、抽出した概念を</p>
+  <p>組み合わせることにより、自分なりのリュックサッ</p>
+  <p>クを作成しました。</p>`, 
+    link: "/map", 
+    spineColor:"#53547b" },
+  { 
+    id: 7, title: "自主制作", 
+    cover: "/covers/book7.png", 
+    innerCover:"/covers/book-inner7.png", 
+    content: 
+    `<h1>自主制作</h1>
+  <h3>部活とゲームjam</h3>
+  <p>部活では、気ままに創作イラストを描いています。</p>
+  <p>また、時々大学のGameJamに参加しています。様</p>
+  <p>々な世界観を忠実に表現する必要があることで良</p>
+  <p>い刺激になっています</p>
+    `, 
+    link: "/jisyu", 
+    spineColor:"#4c4b4c" }
 ];
+
+// 補助コンポーネント（export default は付けない）
+function BookContent({ text }) {
+  return (
+    <div className="book-content">
+      {text.split("\n").map((line, i) => (
+        <p key={i}>{line}</p>
+      ))}
+    </div>
+  );
+}
 
 export default function App() {
   const [openBookId, setOpenBookId] = useState(null);
-
-  // 本棚DOM取得
-  const shelfRef = useRef(null);
-
-  // 自動スクロール
-  useEffect(() => {
-    const shelf = shelfRef.current;
-
-    if (!shelf) return;
-
-    let animationFrame;
-    let scrollAmount = 0;
-    let isPaused = false;
-
-    const speed = 0.4;
-
-    const animate = () => {
-      if (!isPaused) {
-        scrollAmount += speed;
-
-        // 横スクロール
-        shelf.scrollLeft = scrollAmount;
-
-        // 最後まで行ったらループ
-        if (
-          scrollAmount >=
-          shelf.scrollWidth - shelf.clientWidth
-        ) {
-          scrollAmount = 0;
-        }
-      }
-
-      animationFrame = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    // ホバー中停止
-    const stopScroll = () => {
-      isPaused = true;
-    };
-
-    const startScroll = () => {
-      isPaused = false;
-    };
-
-    shelf.addEventListener("mouseenter", stopScroll);
-    shelf.addEventListener("mouseleave", startScroll);
-
-    return () => {
-      cancelAnimationFrame(animationFrame);
-
-      shelf.removeEventListener("mouseenter", stopScroll);
-      shelf.removeEventListener("mouseleave", startScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -120,14 +123,53 @@ export default function App() {
 
       <div className="app">
         <div className="room-wall"></div>
-
         <Bookshelf
-          ref={shelfRef}
-          books={[...books, ...books]} // ← 無限ループ感
+          books={books}
           openBookId={openBookId}
           onOpen={(id) => setOpenBookId(id)}
         />
       </div>
+
+ {/* --- タイトル部分 --- */}
+<div className="text">
+  <p style={{ color: '#888', margin: 0 }}>profile</p>
+  <h1 style={{ fontSize: '2rem', margin: '5px 0' }}>自己紹介</h1>
+</div>     
+  
+{/* --- メインコンテンツ --- */}
+<section className="content">        
+  <div className="photo">
+    {/* CSSで .photo { width: 300px; } などに設定しておくと安定します */}
+    <img src="/covers/icon.jpg" alt="my icon" style={{ width: '100%', borderRadius: '10px' }} />
+  </div>
+  
+  <div className="contents">
+    <p style={{ color: '#666', marginBottom: '4px' }}>taneya yuuka</p>
+    <h1>種谷 有香</h1>
+    
+    <div style={{ marginBottom: '20px', borderLeft: '3px solid #ccc', paddingLeft: '15px' }}>
+      <h3>和歌山大学システム工学部システム工学科</h3>
+      <h3>クロスリアリティ・情報デザインメジャー</h3>
+      <h3>デザインシステム計画研究室</h3>
+    </div>
+
+    <p><strong>● 部活動</strong>　文化系デジタル創作活動「mycom」部長</p>
+    <p><strong>● アルバイト</strong>　塾講師</p>
+    <p><strong>● 資格</strong>　色彩検定2級・3級、基本情報技術者試験（合格見込み）</p>
+    <p><strong>● 趣味</strong>　ニードルフェルト、料理（練習中！）</p>
+    <p><strong>● 特技</strong>　似顔絵を描くこと</p>
+  </div>
+</section>
+
+
+      <section className="graph">
+        <h1>システムによる効率的かつ的確なデザイン開発を</h1>
+        <h1>目指して</h1>
+        <div className="photo2">
+          <img src="/covers/profile2.png" alt="my icon" className="photoimg" />
+        </div>
+        <p>illustratorによる基本のデザイン、方法論による分析、柔軟な発想を行うことができます。柔軟な発想はプログラミングを学習したことで身についたものであり、試行錯誤をくり返しつつ複数ある正解の形に近づいていく思考をデザインに活かしています。分析による、感覚的ではない根拠のある論理的なデザインが得意です。</p>
+      </section>
 
       <footer className="footer">
         <p>© 2026 Taneya Yuuka</p>
