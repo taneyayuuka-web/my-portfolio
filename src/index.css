@@ -23,7 +23,7 @@ body {
 
 /* 本棚 */
 .bookshelf-3d {
-  display: flex;
+  display: inline-flex;
 
   width: max-content;
 
@@ -336,12 +336,13 @@ transform: translateZ(120px) rotateY(var(--tilt, 0deg));
 
 
 .bookshelf-scroll {
-  overflow-x: auto;
+  width: 100%;
+  overflow-x: scroll;
   overflow-y: hidden;
 
-  width: 100%;
-
   scrollbar-width: none;
+
+  position: relative;
 
   background-image:
     linear-gradient(

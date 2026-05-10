@@ -27,44 +27,49 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
   }, []);
 
 /* ---------------- 無限スクロール補正（ジャンプなし） ---------------- */
-/* ---------------- 無限スクロール補正（ジャンプなし） ---------------- */
   useEffect(() => {
     let rafId;
-
-    const SPEED = 0.35;
+    const SPEED = 0.35; 
 
     const loop = () => {
+      // ★ 修正：本が開いている間は、次のフレームを要請せずにループを終了させる
+      if (openBookId !== null) {
+        return; 
+      }
+
       const el = scrollRef.current;
       if (!el) return;
 
-      // 本が閉じている時だけスクロール
-      if (openBookId === null) {
-        el.scrollLeft += SPEED;
+      // ① 自動スクロール
+      el.scrollLeft += SPEED;
 
-        const third = el.scrollWidth / 3;
-        const view = el.clientWidth;
+      const third = el.scrollWidth / 3;
+      const view = el.clientWidth;
 
-        // 無限ループ補正
-        if (el.scrollLeft < third - view) {
-          el.scrollLeft += third;
-        } else if (el.scrollLeft > third * 2 - view) {
-          el.scrollLeft -= third;
-        }
-
-        lastScrollLeft.current = el.scrollLeft;
+      // ② 無限ループ補正
+      if (el.scrollLeft < third - view) {
+        el.scrollLeft += third;
+      } else if (el.scrollLeft > third * 2 - view) {
+        el.scrollLeft -= third;
       }
 
-      // ← 常に次フレームを登録する
+      lastScrollLeft.current = el.scrollLeft;
+      
+      // 次のフレームを予約
       rafId = requestAnimationFrame(loop);
     };
 
-    rafId = requestAnimationFrame(loop);
+    // 本が閉じている時だけループを開始
+    if (openBookId === null) {
+      rafId = requestAnimationFrame(loop);
+    }
 
     return () => {
-      cancelAnimationFrame(rafId);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
     };
-  }, [openBookId]);
-
+  }, [openBookId]); // openBookIdが変わるたびにクリーンアップして再実行
 
 
   /* ---------------- スクロール傾き ---------------- */
@@ -90,18 +95,17 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     }
   };
 
-
-  return (
+return (
   <div className="bookshelf-wrapper">
 
-    {/* スクロール専用 */}
+    {/* スクロール担当 */}
     <div
       className="bookshelf-scroll"
       ref={scrollRef}
       onScroll={handleScroll}
     >
 
-      {/* 3D専用 */}
+      {/* 本を並べるだけ */}
       <div className="bookshelf-3d">
 
         {loopedBooks.map((book, index) => {
@@ -145,5 +149,4 @@ export default function Bookshelf({ books, openBookId, onOpen }) {
     </div>
   </div>
 );
-
 }
