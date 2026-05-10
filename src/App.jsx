@@ -137,8 +137,7 @@ export default function App() {
 </div>     
   
 {/* --- メインコンテンツ --- */}
-<section className="content">   
-       
+<section className="content">        
   <div className="photo">
     {/* CSSで .photo { width: 300px; } などに設定しておくと安定します */}
     <img src="/covers/icon.jpg" alt="my icon" style={{ width: '100%', borderRadius: '10px' }} />
